@@ -1,0 +1,9 @@
+body {
+  height: 100%;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.li {
+  display: flex;
+}
