@@ -57,13 +57,20 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [Bookstore] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+> The Bookstore is a website that allows you to:
+Display a list of books.
+Add a book.
+Remove a selected book.
 
-**[your_project__name]** is a...
+**[[Bookstore]** is a...
 
 ## 🛠 Built With <a name="built-with"></a>
+ReactJS
+Css
+HTML
+JavaScript
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -76,19 +83,6 @@ After you're finished please remove all the comments and instructions!
   </ul>
 </details>
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
 
 <!-- Features -->
 
@@ -96,9 +90,9 @@ After you're finished please remove all the comments and instructions!
 
 > Describe between 1-3 key features of the application.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **[Display a list of books]**
+- **[Add a book.]**
+- **[Remove a selected book.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -116,13 +110,14 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
+
 
 ### Prerequisites
 
 In order to run this project you need:
+
+vs code
 
 <!--
 Example command:
@@ -135,6 +130,8 @@ Example command:
 ### Setup
 
 Clone this repository to your desired folder:
+
+git clone https://github.com/frnega/bookstore
 
 <!--
 Example commands:
@@ -202,17 +199,11 @@ Example:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
+👤 **frnega**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/frnega)
 
-👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
