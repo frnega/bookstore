@@ -4,8 +4,7 @@ import { checkStatus } from '../redux/categories/categories';
 
 const Categories = () => {
   const dispatch = useDispatch();
-
-  const categories = useSelector((state) => state.categories);
+  const categories = useSelector((state) => state.categoriesReducer);
 
   return (
     <>
