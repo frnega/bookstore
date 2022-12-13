@@ -144,7 +144,8 @@ Example commands:
 
 ### Install
 
-Install this project with: npm install
+Install this project with: 
+npm install
 
 <!--
 Example command:
@@ -157,7 +158,8 @@ Example command:
 
 ### Usage
 
-To run the project, execute the following command:npm start
+To run the project, execute the following command:
+npm start
 
 <!--
 Example command:
@@ -169,7 +171,8 @@ Example command:
 
 ### Run tests
 
-To run tests, run the following command:npm test
+To run tests, run the following command:
+npm test
 
 <!--
 Example command:
@@ -213,9 +216,9 @@ Example:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[adding books]**
+- [ ] **[removing books]**
+- [ ] **[editing books]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
