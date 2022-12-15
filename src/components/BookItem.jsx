@@ -10,8 +10,7 @@ function BookItem() {
     if (!bookStore.length) {
       dispatch(getBooks());
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [bookStore.length, dispatch]);
 
   const handleRemove = (id) => {
     dispatch(removeBook(id));
