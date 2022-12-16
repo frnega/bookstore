@@ -13,7 +13,7 @@ const Categories = () => {
           <h5>{categories}</h5>
         </div>
         <button type="button" onClick={(e) => { e.preventDefault(); dispatch(checkStatus()); }}>
-          Check Status
+          Under construction
         </button>
       </div>
     </>
