@@ -8,7 +8,7 @@ function BookAdd() {
 
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const [type, setBook] = useState('');
+  const [category, setCategory] = useState('');
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -18,16 +18,16 @@ function BookAdd() {
     setAuthor(e.target.value);
   };
 
-  const handlebookChange = (e) => {
-    setBook(e.target.value);
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
   };
 
   const submitBookToStore = () => {
     const newBook = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title,
       author,
-      type,
+      category,
     };
     dispatch(addBook(newBook));
   };
@@ -36,9 +36,10 @@ function BookAdd() {
     e.preventDefault();
     e.target.children[1].children[0].value = null;
     e.target.children[1].children[1].value = null;
+    e.target.children[1].children[2].value = null;
     setTitle('');
     setAuthor('');
-    setBook('');
+    setCategory('');
   };
 
   return (
@@ -47,10 +48,11 @@ function BookAdd() {
         <h2>ADD NEW BOOK</h2>
         <input type="text" placeholder="Book Title .." onChange={(e) => handleTitleChange(e)} />
         <input className="book-input" placeholder="Author" onChange={(e) => handleAuthorChange(e)} />
-        <select id="books" name="books" onChange={(e) => handlebookChange(e)}>
-          <option value="Economics">Economics</option>
-          <option value="Science">Science</option>
-          <option value="Adventure">Adventure</option>
+        <select id="books" name="books" onChange={(e) => handleCategoryChange(e)}>
+          <option value="Fiction">Fiction</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Busines">Busines</option>
+          <option value="Romance">Romance</option>
         </select>
       </form>
       <button type="button" onClick={(e) => submitBookToStore(e)}>ADD BOOK</button>
