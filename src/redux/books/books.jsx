@@ -1,63 +1,53 @@
-import * as api from '../../api/api';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import processAPIData from '../../api/api';
 
-const ADD_BOOK = 'BookStores/books/ADD_BOOK';
-const REMOVE_BOOK = 'BookStores/books/REMOVE_BOOK';
-const GET_BOOKS = 'BookStores/books/GET_BOOKS';
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/FeM78gBCs7RYCL9Pcx2B/books';
 
-const handleData = (data) => {
-  const books = [];
-  const keys = Object.keys(data);
+const ADD_BOOK = 'books/books/ADD_BOOK';
+const REMOVE_BOOK = 'books/books/REMOVE_BOOK';
+const GET_BOOKS = 'books/books/GET_BOOKS';
 
-  keys.forEach((key, index) => {
-    const book = data[keys[index]];
-    book[0].item_id = key;
+const initialState = [];
 
-    books.push(book[0]);
-  });
-
-  return books;
-};
-
-export const getBooks = () => async (dispatch) => {
-  try {
-    const data = await api.dataBook();
-    dispatch({ type: GET_BOOKS, payload: handleData(data) });
-  } catch (error) {
-    throw new Error(error.message);
-  }
-};
-
-export const addBook = (book) => async (dispatch) => {
-  try {
-    await api.submitBook(book);
-
-    dispatch({ type: ADD_BOOK, payload: book });
-  } catch (error) {
-    throw new Error(error.message);
-  }
-};
-
-export const removeBook = (bookId) => async (dispatch) => {
-  try {
-    await api.deleteBook(bookId);
-
-    dispatch({ type: REMOVE_BOOK, payload: bookId });
-  } catch (error) {
-    throw new Error(error.message);
-  }
-};
-
-const reducer = (state = [], action) => {
+export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
-    case ADD_BOOK:
-      return [...state, action.payload];
-    case GET_BOOKS:
-      return action.payload;
-    case REMOVE_BOOK:
-      return state.filter((book) => book.item_id !== action.payload);
+    case `${ADD_BOOK}/fulfilled`:
+      return [
+        ...state,
+        action.payload,
+      ];
+    case `${REMOVE_BOOK}/fulfilled`:
+      return [
+        ...state.filter((item) => item.item_id !== action.payload),
+      ];
+    case `${GET_BOOKS}/fulfilled`:
+      if (action.payload === '') {
+        return [];
+      }
+      return [
+        ...action.payload,
+      ];
     default:
       return state;
   }
-};
-// export default reducer;
-export default reducer;
+}
+
+export const getBooks = createAsyncThunk(GET_BOOKS,
+  async () => {
+    const response = await axios.get(url);
+    const payload = processAPIData(response?.data);
+    return payload;
+  });
+
+export const addBook = createAsyncThunk(ADD_BOOK,
+  async (payload) => {
+    await axios.post(url, payload);
+    return payload;
+  });
+
+export const removeBook = createAsyncThunk(REMOVE_BOOK,
+  async (itemId) => {
+    await axios.delete(`${url}/${itemId}`);
+    return itemId;
+  });
