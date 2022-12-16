@@ -34,7 +34,6 @@
 }
 
 .current-chapter > button {
-  width: 200px;
   height: 2.063rem;
   margin-top: 1.6rem;
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
@@ -60,6 +59,7 @@
   line-height: normal;
   letter-spacing: normal;
   color: #4386bf;
+  background: #fff;
 }
 
 .current-chapter > button:hover {
