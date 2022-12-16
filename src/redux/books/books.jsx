@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import processAPIData from '../../api/api';
+import '../../styles/book.css';
 
 const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/FeM78gBCs7RYCL9Pcx2B/books';
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/addbook.css';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
@@ -45,17 +46,18 @@ function BookAdd() {
   return (
     <>
       <form action="#" onSubmit={handleSubmit}>
-        <h2>ADD NEW BOOK</h2>
-        <input type="text" placeholder="Book Title .." onChange={(e) => handleTitleChange(e)} />
-        <input className="book-input" placeholder="Author" onChange={(e) => handleAuthorChange(e)} />
-        <select id="books" name="books" onChange={(e) => handleCategoryChange(e)}>
-          <option value="Fiction">Fiction</option>
-          <option value="Computer Science">Computer Science</option>
-          <option value="Busines">Busines</option>
-          <option value="Romance">Romance</option>
-        </select>
+        <h2 className="add-span">ADD NEW BOOK</h2>
+        <div className="add-form d-flex">
+          <input className="input" type="text" placeholder="Book Title .." onChange={(e) => handleTitleChange(e)} />
+          <input className="input" placeholder="Author" onChange={(e) => handleAuthorChange(e)} />
+          <select className="selector" id="books" name="books" onChange={(e) => handleCategoryChange(e)}>
+            <option value="Action">Action</option>
+            <option value="Science Fiction">Science Fiction</option>
+            <option value="Economy">Economy</option>
+          </select>
+          <button type="button" onClick={(e) => submitBookToStore(e)}>ADD BOOK</button>
+        </div>
       </form>
-      <button type="button" onClick={(e) => submitBookToStore(e)}>ADD BOOK</button>
     </>
   );
 }
